@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div>
+        valor <input id="num" type="number" placeholder="R$0,00">
+        entrada <input id="ent" type="number" value="0.00" placeholder="R$0,00">
+        <select name="" id="parcela">
+            <option value="">selecione quantidade de parcelas</option>
+            <option value="5">1</option>
+            <option value="10">2</option>
+            <option value="13.3">3</option>
+        </select>
+        <button onclick="calc()">calcular</button>
+    </div>
+    <div id="res">
+
+    </div>
+    <script>
+        function calc() {
+            let num = document.getElementById('num') //coleta valor do produto
+            let ent = document.getElementById('ent') //coleta valor da entrda
+            let select = document.getElementById('parcela') //coleta o select de parcelas
+            let parcela = select.options[select.selectedIndex] //recebe o index do select de parcelas
+            let p = parcela.text //coleta somente o texto do select de parcelas
+            let p2 = parseInt(p) //converte o texto em numero inteiro do select de parcelas
+            let percent = document.getElementById('parcela').value //coleta o percentual da parcela
+            let acr = (num.value - ent.value) * percent / 100 //calculo do valor de acrescimo
+            let liq = (num.value - ent.value) + acr //calculo total final com acréscimo 
+            let display = document.getElementById('res')//get da div de resultado
+            let p3 = liq / p2 //calcula parcela mensal
+            display.innerHTML = `Valor do Produto ${num.value} <br>
+                                 Entrada R$ ${ent.value} <br>
+                                 Restante a pagar R$${num.value - ent.value}<br>
+                                 Valor do acrescimo ${acr.toFixed(2)}<br>
+                                 Voce vai pagar no total ${liq.toFixed(2)}<br>
+                                 Em ${p2}X ${p3.toFixed(2)} `
+        }
+
+    </script>
+</body>
+</html>

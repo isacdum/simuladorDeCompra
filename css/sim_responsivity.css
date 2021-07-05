@@ -1,0 +1,84 @@
+/* desktop */
+
+@media screen and (max-width: 1440px) {
+	.main {
+		width: 30%;
+	}
+	.item {
+        width: 100%;
+        margin: auto;
+    }
+    select {
+        width: 93%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+	.main {
+		width: 60%;
+	}
+	.item {
+        width: 100%;
+        margin: auto;
+    }
+    select {
+        width: 90%;
+    }
+}
+
+/* smartphones */
+
+@media screen and (max-width: 768px) {
+	.main {
+		width: 60%;
+	}
+    .item {
+        width: 100%;
+        margin: auto;
+    }
+	select {
+        width: 93%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+	.main {
+		width: 90%;
+        margin: auto;
+	}
+    .item {
+        width: 100%;
+        margin: auto;
+    }
+
+}
+
+@media screen and (max-width: 375px) {
+	.main {
+		width: 90%;
+        margin: auto;
+	}
+    .real {
+        padding: 1px;
+    }
+    .item {
+        width: 100%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 320px) {
+	.main {
+		width: 80%;
+	}
+	.real {
+        padding: 0px;
+    }
+    .item {
+        width: 100%;
+        margin: auto;
+    }
+    .button {
+        width: 35%;
+    }
+}
